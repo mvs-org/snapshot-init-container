@@ -48,14 +48,14 @@ if [ -z "$CHAIN_DIR" ]; then
     #
     # With the chain node CLI option --base=/data, $CHAIN_DIR examples:
     #
-
+fi
 
 echo "Downloading $ARCHIVE_URL..."
-mkdir -p /snapshot
-wget -c --progress dot:giga -O /snapshot/archive.tmp "$ARCHIVE_URL"
+mkdir -p /tmp/snapshot
+wget -c --progress dot:giga -O /tmp/snapshot/archive.tmp "$ARCHIVE_URL"
 
 mkdir -p "$CHAIN_DB_PATH"
-$unarchive_func /snapshot/archive.tmp "$CHAIN_DIR"
+$unarchive_func /tmp/snapshot/archive.tmp "$CHAIN_DIR"
 
 if [ -n "$CHOWN" ]; then
     echo "Chown to $CHOWN..."
@@ -68,7 +68,7 @@ if [ -n "$CHMOD" ]; then
 fi
 
 echo "Cleaning up..."
-rm -v /snapshot/archive.tmp
+rm -v /tmp/snapshot/archive.tmp
 
 echo
 ls -la $CHAIN_DB_PATH
