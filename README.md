@@ -20,7 +20,7 @@ initContainers:
         mountPath: /data
     env:
       #
-      # Required, the URL of the snapshot archive
+      # Required, the URL of the snapshot archive(an archive version of the DB of HyperSpace (or any other network))
       # Supported file types:
       #
       # - Gzip tar (URL must ends with .tar.gz)
