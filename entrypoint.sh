@@ -48,7 +48,7 @@ if [ -z "$CHAIN_DIR" ]; then
     #
     # With the chain node CLI option --base=/data, $CHAIN_DIR examples:
     #
-
+fi
 
 echo "Downloading $ARCHIVE_URL..."
 mkdir -p /snapshot

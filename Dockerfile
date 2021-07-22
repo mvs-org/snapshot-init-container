@@ -9,5 +9,6 @@ RUN apk add --no-cache \
     p7zip
 
 COPY entrypoint.sh /
+RUN  chmod 755  entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD []
